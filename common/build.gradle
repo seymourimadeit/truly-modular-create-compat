@@ -1,0 +1,41 @@
+architectury {
+    common rootProject.enabled_platforms.split(',')
+}
+
+repositories {
+    maven {
+        url 'http://147.189.169.31/maven'
+        allowInsecureProtocol = true
+    }
+    maven {
+        url "https://www.cursemaven.com"
+    }
+    maven { url 'https://maven.uuid.gg/releases' }
+    maven { url 'https://maven.terraformersmc.com/' }
+    maven { url 'https://maven.theillusivec4.top/' }
+    maven {
+        url "https://maven.jamieswhiteshirt.com/libs-release"
+        content {
+            includeGroup "com.jamieswhiteshirt"
+        }
+    }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+}
+
+dependencies {
+    modApi("com.Truly-Modular.Modular-Item-API:Truly-Modular-miapi-common:${rootProject.miapi_version}-${rootProject.minecraft_version}")
+    // We depend on Fabric Loader here to use the Fabric @Environment annotations,
+    // which get remapped to the correct annotations on each platform.
+    // Do NOT use other classes from Fabric Loader.
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+}

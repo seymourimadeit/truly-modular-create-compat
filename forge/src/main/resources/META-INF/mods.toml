@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "truly_modular_create_compat"
+version = "${version}"
+displayName = "Truly Modular Create Compat"
+authors = "TallestRed, LaptopPunk"
+description = '''
+Makes Truly Modular Armory's scuba helmet compatible with Create's backtanks.
+'''
+#logoFile = ""
+
+[[dependencies.truly_modular_create_compat]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.truly_modular_create_compat]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.truly_modular_create_compat]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"
