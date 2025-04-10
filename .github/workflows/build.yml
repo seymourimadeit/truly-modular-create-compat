@@ -28,10 +28,12 @@ jobs:
       - name: mc-publish-fabric
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-          version: ${{ steps.version.outputs.value }}
+          version: ${{ steps.version.outputs.value }}-fabric
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
+          files: |
+            **/build/libs/!(*@(dev|sources|javadoc|slim)*|*shadow*).jar
           version-type: release
           loaders: fabric
           game-versions: 1.20.1
@@ -40,10 +42,12 @@ jobs:
       - name: mc-publish-forge
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
-          version: ${{ steps.version.outputs.value }}
+          version: ${{ steps.version.outputs.value }}-forge
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
+          files: |
+            **/build/libs/!(*@(dev|sources|javadoc|slim)*|*shadow*).jar
           version-type: release
           loaders: forge
           game-versions: 1.20.1
