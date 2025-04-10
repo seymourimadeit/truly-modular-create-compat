@@ -4,12 +4,21 @@ architectury {
 
 repositories {
     maven {
-        url 'http://trulymodular.dedyn.io/maven'
-        allowInsecureProtocol = true
+        url 'https://modmaven.dev/'
     }
     maven {
         url "https://www.cursemaven.com"
     }
+    maven {
+        url 'http://trulymodular.dedyn.io/maven'
+        allowInsecureProtocol = true
+    }
+    maven { url "https://maven.createmod.net" }
+    maven { url "https://mvn.devos.one/snapshots/" }
+    maven { url "https://mvn.devos.one/releases/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+    maven { url "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" }
+    maven { url  "https://maven.cafeteria.dev/releases" }
     maven { url 'https://maven.uuid.gg/releases' }
     maven { url 'https://maven.terraformersmc.com/' }
     maven { url 'https://maven.theillusivec4.top/' }
@@ -19,6 +28,7 @@ repositories {
             includeGroup "com.jamieswhiteshirt"
         }
     }
+    maven { url = "https://jitpack.io/" }
     maven {
         name = 'GeckoLib'
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -38,4 +48,7 @@ dependencies {
 
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+
+    modCompileOnly("com.simibubi.create:create-fabric-${minecraft_version}:${create_version_fabric}")
+    modCompileOnly("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
 }

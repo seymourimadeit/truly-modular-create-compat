@@ -10,7 +10,7 @@ import tallestegg.truly_modular_create_compat.forge.events.TMCCMEvents;
 @Mod(TrulyModularCreateCompatModCommon.MOD_ID)
 public final class TrulyModularCreateCompatModForge {
     public TrulyModularCreateCompatModForge() {
-        TMCCMEvents.init();
+       // TMCCMEvents.init();
         EventBuses.registerModEventBus(TrulyModularCreateCompatModCommon.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
         TrulyModularCreateCompatModCommon.init();
     }
