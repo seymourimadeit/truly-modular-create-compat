@@ -4,7 +4,7 @@ architectury {
 
 repositories {
     maven {
-        url 'http://147.189.169.31/maven'
+        url 'http://trulymodular.dedyn.io/maven'
         allowInsecureProtocol = true
     }
     maven {

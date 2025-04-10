@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "truly_modular_create_compat",
+  "version": "${version}",
+  "name": "\"Truly Modular Create Compat",
+  "description": "Makes Truly Modular Armory's scuba helmet compatible with Create's backtanks.",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/truly_modular_create_compat/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "tallestred.truly_modular_create_compat.fabric.TrulyModularCreateCompatFabric"
+    ],
+    "client": [
+      "tallestred.truly_modular_create_compat.fabric.client.TrulyModularCreateCompatFabric"
+    ]
+  },
+  "mixins": [
+    "truly_modular_create_compat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.13",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "fabric-api": "*",
+    "create": "*",
+    "miapi": "*",
+    "armory": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

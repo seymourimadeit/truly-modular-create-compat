@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/seymourimadeit/truly-modular-create-compat"
+license = "MIT"
 
 [[mods]]
 modId = "truly_modular_create_compat"
@@ -32,4 +32,25 @@ modId = "architectury"
 mandatory = true
 versionRange = "[9.2.14,)"
 ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.truly_modular_create_compat]]
+modId = "miapi"
+mandatory = true
+versionRange = "1.1.43"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.truly_modular_create_compat]]
+modId = "create"
+mandatory = true
+versionRange = "6.0.1-25"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.truly_modular_create_compat]]
+modId = "armory"
+mandatory = true
+versionRange = "1.11"
+ordering = "NONE"
 side = "BOTH"

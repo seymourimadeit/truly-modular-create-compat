@@ -19,7 +19,7 @@ repositories {
         url "https://www.cursemaven.com"
     }
     maven {
-        url 'https://147.189.169.31/maven'
+        url 'http://trulymodular.dedyn.io/maven'
         allowInsecureProtocol = true
     }
     maven { url 'https://maven.uuid.gg/releases' }
