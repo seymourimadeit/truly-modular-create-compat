@@ -32,9 +32,6 @@ jobs:
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
-          files: |
-            fabric/build/libs/!(*-@(dev|sources|javadoc|slim)).jar
-            fabric/build/libs/*-@(sources|javadoc).jar
           version-type: release
           loaders: fabric
           game-versions: 1.20.1
@@ -47,9 +44,6 @@ jobs:
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
-          files: |
-            forge/build/libs/!(*-@(dev|sources|javadoc|slim)).jar
-            forge/build/libs/*-@(sources|javadoc).jar
           version-type: release
           loaders: forge
           game-versions: 1.20.1
@@ -72,8 +66,8 @@ jobs:
         uses: richardrigutins/replace-in-files@v2
         with:
           files: 'gradle.properties'
-          search-text: ${{ steps.version.outputs.value }}
-          replacement-text: ${{ steps.bump_version.outputs.next-version }}
+          search-text: mod_version = ${{ steps.version.outputs.value }}
+          replacement-text: mod_version = ${{ steps.bump_version.outputs.next-version }}
       - name: Commit & Push
         uses: Andro999b/push@v1.3
         with:
