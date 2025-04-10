@@ -15,13 +15,16 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Build with Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          arguments: build
+          gradle-version: 8.8
       - uses: BrycensRanch/read-properties-action@v1
         id: version
         with:
           file: gradle.properties
           property: mod_version
-      - name: Build with Gradle
-        run: ./gradlew build
       - name: mc-publish-fabric
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
@@ -29,7 +32,7 @@ jobs:
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
-          files-primary: |
+          files: |
             fabric/build/libs/!(*-@(dev|sources|javadoc|slim)).jar
             fabric/build/libs/*-@(sources|javadoc).jar
           version-type: release
@@ -44,7 +47,7 @@ jobs:
           curseforge-id: 1239946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GIT_TOKEN }}
-          files-primary: |
+          files: |
             forge/build/libs/!(*-@(dev|sources|javadoc|slim)).jar
             forge/build/libs/*-@(sources|javadoc).jar
           version-type: release
