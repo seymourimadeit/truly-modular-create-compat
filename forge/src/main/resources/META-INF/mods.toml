@@ -44,7 +44,7 @@ side = "BOTH"
 [[dependencies.truly_modular_create_compat]]
 modId = "create"
 mandatory = true
-versionRange = "[0.5.1i,)"
+versionRange = "[0.5.1.i,)"
 ordering = "NONE"
 side = "BOTH"
 
